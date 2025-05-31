@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reva's Biography ⋆. 𐙚 ˚</title>
+    <meta name="description" content="Learn more about me!">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #FFF9E6 0%, rgba(255, 179, 217, 0.2) 50%, rgba(179, 217, 255, 0.2) 100%);
+            min-height: 100vh;
+            color: #374151;
+        }
+        
+        .kawaii-shadow {
+            box-shadow: 0 8px 32px rgba(255, 179, 217, 0.3);
+        }
+        
+        .kawaii-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 179, 217, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-bounce-soft {
+            animation: bounce-soft 2s ease-in-out infinite;
+        }
+        
+        .animate-wiggle {
+            animation: wiggle 0.5s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes bounce-soft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 179, 217, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link.active {
+            background: #FFB3D9;
+            color: white;
+            animation: bounce-soft 2s ease-in-out infinite;
+        }
+        
+        .nav-link:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            color: #374151;
+        }
+        
+        .nav-link:not(.active):hover {
+            background: rgba(255, 179, 217, 0.3);
+            color: #FFB3D9;
+            transform: scale(1.05);
+        }
+        
+        main {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+        }
+        
+        .text-center { text-align: center; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        
+        .grid { display: grid; }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .gap-4 { gap: 1rem; }
+        .gap-8 { gap: 2rem; }
+        
+        .rounded-full { border-radius: 9999px; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        
+        .text-gray-800 { color: #1f2937; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-600 { color: #4b5563; }
+        
+        .kawaii-pink { color: #FFB3D9; }
+        .kawaii-blue { color: #B3D9FF; }
+        .kawaii-mint { color: #B3FFD9; }
+        
+        .bg-kawaii-pink { background-color: #FFB3D9; }
+        .bg-kawaii-blue { background-color: #B3D9FF; }
+        .bg-kawaii-yellow { background-color: #FFEB9C; }
+        
+        .profile-image {
+            width: 16rem;
+            height: 16rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 179, 217, 0.3);
+            box-shadow: 0 8px 32px rgba(255, 179, 217, 0.3);
+            margin: 0 auto;
+        }
+        
+        .hobby-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .hobby-item:hover {
+            background: rgba(255, 179, 217, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .hobby-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #FFB3D9, #B3D9FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .emoji-decoration {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            background: #FFEB9C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            top: -0.5rem;
+            right: -0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container { gap: 1rem; }
+            .nav-link { padding: 0.5rem 1rem; font-size: 0.875rem; }
+            .text-5xl { font-size: 2.25rem; }
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .profile-image { width: 12rem; height: 12rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">
+                <span>( ˶ˆᗜˆ˵ )</span>
+                <span>My Profile</span>
+            </a>
+            <a href="karakter.html" class="nav-link">
+                <span>༘⋆</span>
+                <span>My Top Bias</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                    <span class="kawaii-pink">Reva's</span> Biography .ᐟ
+                </h1>
+                <p class="text-xl text-gray-600">₊⊹</p>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="kawaii-card rounded-3xl p-8 mb-12 kawaii-shadow animate-float">
+                <div class="grid grid-cols-2 gap-8" style="align-items: center;">
+                    <!-- Profile Image -->
+                    <div class="text-center">
+                        <div style="position: relative; display: inline-block;">
+                            <img 
+                                src="WhatsApp Image 2025-05-31 at 23.28.53.jpeg"
+                                alt="Reva's Profile"
+                                class="profile-image animate-bounce-soft"
+                            />
+                            <div class="emoji-decoration animate-wiggle">🌟</div>
+                        </div>
+                    </div>
+
+                    <!-- Biography -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6" style="display: flex; align-items: center;">
+                            <span style="margin-right: 0.75rem; color: #FFB3D9;">⭐</span>
+                            About Me
+                        </h2>
+                        
+                        <div style="color: #374151; line-height: 1.6;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <span style="color: #B3D9FF; margin-right: 0.75rem;">📍</span>
+                                <span>Tangerang, Indonesia</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                                <span style="color: #B3FFD9; margin-right: 0.75rem;">📅</span>
+                                <span>13 years old</span>
+                            </div>
+                            
+                            <p class="text-lg mb-4">
+                                Hii, my name is Reva, I really like to do debates, MUN, graphic designs, and more!
+                                My favourite color is pink, green, blue, and white! I really want to become a Diplomat
+                                 or a Data Analyst one day. I hope to be able to be in the UN too!
+                            </p>
+                            
+                            <p class="text-lg">
+                                Everyone should atleast be able to feel like they are at their best once in their life
+                                and its really important to not belittle yourself too!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobbies Section -->
+            <div class="kawaii-card rounded-3xl p-8 kawaii-shadow">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    My Favorite Things ◝(ᵔᗜᵔ)◜
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="hobby-item">
+                        <div class="hobby-icon">📚</div>
+                        <span class="text-gray-700 font-medium">Animanga</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">🎵</div>
+                        <span class="text-gray-700 font-medium">Listening to Different types of Music</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">☕</div>
+                        <span class="text-gray-700 font-medium">Trying out different food</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">⭐</div>
+                        <span class="text-gray-700 font-medium">Collecting Aesthetic stuff</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fun Facts -->
+            <div class="mt-12 text-center">
+                <div class="kawaii-card rounded-2xl p-6" style="display: inline-block;">
+                    <p class="text-gray-600" style="font-style: italic;">
+                        "You only life once, so make sure you spend it to be the best of yourself" ꨄ︎
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

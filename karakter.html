@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jang Wonyoung 𖹭.ᐟ </title>
+    <meta name="description" content="Learn about my favourite bias, Jang Wonyoung!">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #FFF9E6 0%, rgba(255, 179, 217, 0.2) 50%, rgba(179, 217, 255, 0.2) 100%);
+            min-height: 100vh;
+            color: #374151;
+        }
+        
+        .kawaii-shadow {
+            box-shadow: 0 8px 32px rgba(255, 179, 217, 0.3);
+        }
+        
+        .kawaii-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 179, 217, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-bounce-soft {
+            animation: bounce-soft 2s ease-in-out infinite;
+        }
+        
+        .animate-wiggle {
+            animation: wiggle 0.5s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes bounce-soft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 179, 217, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link.active {
+            background: #B3D9FF;
+            color: white;
+            animation: bounce-soft 2s ease-in-out infinite;
+        }
+        
+        .nav-link:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            color: #374151;
+        }
+        
+        .nav-link:not(.active):hover {
+            background: rgba(179, 217, 255, 0.3);
+            color: #B3D9FF;
+            transform: scale(1.05);
+        }
+        
+        main {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+        }
+        
+        .text-center { text-align: center; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        
+        .grid { display: grid; }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .gap-4 { gap: 1rem; }
+        .gap-8 { gap: 2rem; }
+        
+        .rounded-full { border-radius: 9999px; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        
+        .text-gray-800 { color: #1f2937; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-600 { color: #4b5563; }
+        
+        .kawaii-pink { color: #FFB3D9; }
+        .kawaii-blue { color: #B3D9FF; }
+        .kawaii-mint { color: #B3FFD9; }
+        
+        .profile-image {
+            width: 16rem;
+            height: 16rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 179, 217, 0.3);
+            box-shadow: 0 8px 32px rgba(255, 179, 217, 0.3);
+            margin: 0 auto;
+        }
+        
+        .bio-item {
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bio-pink { background: rgba(255, 179, 217, 0.1); }
+        .bio-blue { background: rgba(179, 217, 255, 0.1); }
+        .bio-mint { background: rgba(179, 255, 217, 0.1); }
+        
+        .reason-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .reason-item:hover {
+            background: rgba(255, 179, 217, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .reason-number {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #FFB3D9, #B3D9FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-item:hover {
+            background: rgba(179, 217, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .achievement-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #B3D9FF, #B3FFD9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #FFB3D9, #B3D9FF);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .external-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .emoji-decoration {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            background: #FFEB9C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            top: -0.5rem;
+            right: -0.5rem;
+        }
+        
+        .emoji-decoration-small {
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            background: #B3D9FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            bottom: -0.5rem;
+            left: -0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container { gap: 1rem; }
+            .nav-link { padding: 0.5rem 1rem; font-size: 0.875rem; }
+            .text-5xl { font-size: 2.25rem; }
+            .grid-cols-2 { grid-template-columns: 1fr; }
+            .profile-image { width: 12rem; height: 12rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <span>( ˶ˆᗜˆ˵ )</span>
+                <span>My Profile</span>
+            </a>
+            <a href="karakter.html" class="nav-link active">
+                <span>༘⋆</span>
+                <span>My Top Bias</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                    My Number 1 Bias: <span class="kawaii-pink">Jang Wonyoung</span> ₊˚⊹ᰔ
+                </h1>
+                <p class="text-xl text-gray-600">"You are you, I am me!" ٩(ˊᗜˋ*)و ♡ </p>
+            </div>
+
+            <!-- Character Profile Card -->
+            <div class="kawaii-card rounded-3xl p-8 mb-12 kawaii-shadow animate-float">
+                <div class="grid grid-cols-2 gap-8" style="align-items: center;">
+                    <!-- Character Image -->
+                    <div class="text-center">
+                        <div style="position: relative; display: inline-block;">
+                            <img 
+                                src="WONYOUNG_IVE.jpeg"
+                                alt="Jang Wonyoung"
+                                class="profile-image animate-bounce-soft"
+                            />
+                            <div class="emoji-decoration animate-wiggle">🌸</div>
+                            <div class="emoji-decoration-small">✨</div>
+                        </div>
+                    </div>
+
+                    <!-- Character Bio -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6" style="display: flex; align-items: center;">
+                            <span style="margin-right: 0.75rem; color: #FFB3D9;">𐙚</span>
+                            Jang Wonyoung's Biography
+                        </h2>
+                        
+                        <div style="color: #374151;">
+                            <div class="bio-item bio-pink">
+                                <h4 class="font-semibold kawaii-pink mb-2">Real Name:</h4>
+                                <p>Jang Won Young (장원영)</p>
+                            </div>
+                            
+                            <div class="bio-item bio-blue">
+                                <h4 class="font-semibold kawaii-blue mb-2">Group:</h4>
+                                <p>IVE</p>
+                            </div>
+                            
+                            <div class="bio-item bio-mint">
+                                <h4 class="font-semibold kawaii-mint mb-2">Birthday</h4>
+                                <p>August 31, 2004</p>
+                            </div>
+                            
+                            <p class="text-lg mt-6" style="line-height: 1.6;">
+                                Jang Wonyoung, also known as Wonyoung is proclaimed to be the number 1
+                                top IT girl in 4th generation girl groups. Every brand wants to collab
+                                with her; and every collab she does, always goes viral! Even some say
+                                that she's the perfect Kpop idol that you can't find a bad picture of
+                                her anywhere! 🌟
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why She's My Favorite -->
+            <div class="kawaii-card rounded-3xl p-8 mb-12 kawaii-shadow">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center" style="display: flex; align-items: center; justify-content: center;">
+                    <span style="margin-right: 0.75rem; color: #FFB3D9;">✨</span>
+                    Why is Wonyoung my Bias?
+                    <span style="margin-left: 0.75rem; color: #FFB3D9;">✨</span>
+                </h3>
+                
+                <div>
+                    <div class="reason-item">
+                        <div class="reason-number">1</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Her untouchable and 'Lucky Vicky' mindset</span>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-number">2</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Her striving in both academics and beauty!</span>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-number">3</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Her being untouchable yet the most kindest too!</span>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-number">4</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Aces in all aesthetics: elegant, cute, sexy, and more!</span>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-number">5</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Her maintaining an organized self</span>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-number">6</div>
+                        <span class="text-gray-700" style="line-height: 1.6;">Got named an aesthetic after her, Wonyoungism!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Character Achievements -->
+            <div class="kawaii-card rounded-3xl p-8 kawaii-shadow">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                    Her Amazing Achievements *ੈ✩‧₊˚
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">☘︎</div>
+                        <span class="text-gray-700 font-medium">Won 3x at her school's math contest</span>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"> ♡ </div>
+                        <span class="text-gray-700 font-medium">Student Council President and always ranked 1st or 2nd in class</span>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">•ﻌ•</div>
+                        <span class="text-gray-700 font-medium">Won a lawsuit against Sojang (a popular Kpop Idol Hater)</span>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon"> ༘𐙚</div>
+                        <span class="text-gray-700 font-medium">All while being an IDOL!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Section -->
+            <div class="mt-12 text-center">
+                <div class="kawaii-card rounded-2xl p-6" style="display: inline-block;">
+                    <p class="text-gray-600 text-lg mb-2" style="font-style: italic;">
+                        "Some days they hate me, some days they love me, but both days I get paid"
+                    </p>
+                    <p class="kawaii-pink font-semibold">- Jang Wonyoung ₍⑅ᐢ..ᐢ₎</p>
+                </div>
+            </div>
+
+            <!-- External Link -->
+            <div class="mt-8 text-center">
+                <a 
+                    href="https://www.instagram.com/for_everyoung10/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="external-link kawaii-shadow"
+                >
+                    <span>⭐</span>
+                    <span>Jang Wonyoung No. 1</span>
+                    <span>⭐</span>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
